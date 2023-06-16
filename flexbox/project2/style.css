@@ -1,0 +1,43 @@
+body, html {
+	font-size: 20px;
+	height: 100%
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	gap: 50px;
+	font-family: 'Lora', serif;
+}
+
+.button {
+  background-color: #1a1919;
+  border: none;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Lora', serif;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: #c4ae0c;
+  color: black;
+}
+
+ul li {
+	padding: 3px 0px;
+}
+
+ul li::marker {
+	color: #c4ae0c;
+}
+
+a {
+	color: black;
+}

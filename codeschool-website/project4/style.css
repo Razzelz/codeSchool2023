@@ -1,0 +1,278 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.top-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 20px 200px;
+	color: #171211;
+	background-color: #EFF1F3;
+}
+
+.links {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 20px;
+}
+
+.links a {
+	color: #171211;
+	text-decoration: none;
+	transition: all 0.25s ease-in-out;
+	font-size: 20px;
+}
+
+.links a:hover {
+	color: #DB2B39;
+}
+
+.links-mobile {
+	display: none;
+}
+
+.branding i {
+	display: flex;
+	flex-wrap: nowrap;
+	color: #009FB7;
+	font-size: 40px;
+	align-items: center;
+	margin: 10px;
+}
+
+.branding {
+	display: flex;
+	flex-wrap: nowrap;
+	color: #171211;
+	font-size: 18px;
+	align-items: center;
+}
+
+.container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+}
+
+
+.hero-image {
+        background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.1)
+        ),
+        url("code.jpg");
+
+        height: 400px;
+        width: 1100px;
+
+        background-position: center;
+        background-size: cover;
+        position: relative;
+}
+
+.hero-text {
+        text-align: left;
+        position: absolute;
+        top: 75%;
+        left: 53%;
+        transform: translate(-100%, -100%);
+        color: #EFF1F3;
+	font-size: 20px;
+}
+
+.app-btn {
+	display:inline-block;
+	color:#EFF1F3;
+	background:#009FB7;
+	box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+	cursor:pointer;
+	vertical-align:middle;
+	padding: 12px 15px;
+	text-align: center;
+}
+
+.app-btn:hover {
+	background-color: #FED766;
+	color:#171211;
+	transition: 0.5s;
+	box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+a {
+	text-decoration: none; /* no underline */
+	color: inherit;
+}
+
+.resources-header{
+	display: flex;
+	justify-content: center;
+	text-align: left;
+	background-color: #FED766;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.resources {
+	padding-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+h3 {
+	background-color: #DB2B39;
+	color: #EFF1F3;
+	padding: 10px 15px;
+}
+
+h3:hover {
+	background-color:#009FB7;
+	color:#EFF1F3;
+	transition: 0.5s;
+	box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+.grid-cont {
+        display: grid;
+	gap: 10px 10px;
+	grid-template-columns: 250px 250px 250px;
+	column-gap: 40px;
+	text-align: center;
+}
+
+.item-1, .item-2, .item-3 {
+	background-color: #EFF1F3;
+}
+
+.item-1:hover {
+	transition: 0.5s;
+	box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+.item-2:hover {
+	transition: 0.5s;
+	box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+.item-3:hover {
+	transition: 0.5s;
+	box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+@media screen and (max-width:960px) {
+
+    /* Tablet screen sizes */
+
+	.top-navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 20px 50px;
+		color: #171211;
+		background-color: #EFF1F3;
+	}
+
+	.links {
+		display: none;
+	}
+
+	.links-mobile {
+		display: flex;
+		justify-content: center;
+		flex-wrap: nowrap;
+		gap: 20px;
+		padding: 15px 15px;
+	}
+
+	.links-mobile a:hover {
+		color: #DB2B39;
+	}
+
+	.hero-text {
+		text-align: left;
+		position: absolute;
+		top: 90%;
+		left: 53%;
+		transform: translate(-100%, -100%);
+		color: #EFF1F3;
+		font-size: 20px;
+	}
+
+	.grid-cont {
+		display: flex;
+		justify-content: center;
+		gap: 10px 10px;
+		grid-template-rows: 250px 250px 250px;
+		column-gap: 10px;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width:600px) {
+
+    /* Phone screen sizes */
+
+	.top-navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 20px 50px;
+		color: #171211;
+		background-color: #EFF1F3;
+		overflow: hidden;
+	}
+
+	.links {
+		display: none;
+	}
+
+	.links-mobile {
+		display: flex;
+		justify-content: center;
+		flex-wrap: nowrap;
+		gap: 20px;
+		padding: 15px 15px;
+	}
+
+	.links-mobile a:hover {
+		color: #DB2B39;
+	}
+
+	.hero-text {
+		text-align: left;
+		position: absolute;
+		top: 90%;
+		left: 53%;
+		transform: translate(-100%, -100%);
+		color: #EFF1F3;
+		font-size: 20px;
+	}
+
+	.grid-cont {
+		display: flex;
+		justify-content: center;
+		gap: 10px 10px;
+		grid-template-rows: 250px 250px 250px;
+		column-gap: 10px;
+		text-align: center;
+	}
+
+	.item-1 {
+		grid-row: 1;
+	}
+
+	.item-2 {
+		grid-row: 2;
+	}
+
+	.item-3:hover {
+		grid-row: 3 / 4;
+	}
+}

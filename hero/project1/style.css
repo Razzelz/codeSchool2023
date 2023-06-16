@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-size: 20px;
+    height: 100%;
+}
+
+.hero-image {
+	background-image: linear-gradient(
+	to right,
+	rgba(0, 0, 0, 1),
+	rgba(0, 0, 0, 0.1)	
+	),
+	url("mixer.jpg");
+
+	height: 450px;
+	width: 1200px;
+
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	margin: 30px;
+}
+
+.hero-text {
+	text-align: left;
+	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	top: 75%;
+	left: 40%;
+	transform: translate(-100%, -100%);
+	color: white;
+}
+
+.button {
+	background-color: #268071;
+	border: none;
+	color: white;
+	padding: 15px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}

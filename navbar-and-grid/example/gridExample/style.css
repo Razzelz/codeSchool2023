@@ -1,0 +1,27 @@
+.grid-cont {
+	display: grid;
+	width: 600px;
+	height: 600px;
+
+	grid-template-rows: 200px 200px 200px;
+	grid-template-columns: repeat(3, 200px);
+}
+
+.item {
+	font-size: 24px;
+	border: 1px solid red;
+	background-size: cover;
+	background-image: url('https://picsum.photos/200/300');
+}
+
+.item-1, .item-5{
+	grid-column: 1 / 2;
+}
+
+.item-2, .item-6 {
+	grid-column: 2 / 4;
+}
+
+.item-3 {
+	grid-column: 1 / 3;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+	    <h1>Whack-a-Mole Game</h1>
+	    <div class="row" v-for="row in rows"> <!-- Loop over the rows -->
+		    <div class="col" v-for="col in columns"> <!-- Loop over the columns -->
+			    <div 
+				    class="mole" 
+				    v-if="moleRow == row && moleCol == col"
+				    v-on:click="hitMole()"
+			    ></div>
+		    </div>
+	    </div>
+        <!-- Content goes here -->
+	<div>
+		<h2>Score: {{score}} / {{total}}</h2>
+	</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

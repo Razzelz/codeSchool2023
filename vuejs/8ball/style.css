@@ -1,0 +1,27 @@
+#eight-ball {
+	height: 400px;
+	width: 400px;
+	background-color: black;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#message-area {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.question-area {
+	display: flex;
+	flex-flow: column;
+	max-width: 300px;
+}
+

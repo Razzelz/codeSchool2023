@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+	<!-- everything vue in this div -->
+	<div id="app">
+		<h1>{{ message }}</h1>
+
+
+		<div>
+			<!-- For loop -->
+			<!-- item.show ? is an if statment (ternary)-->
+			<!-- if statement says: if item.show == true, change color. else (:)-->
+			<div 
+				v-for="item in items"
+				v-bind:style="[item.show ? {backgroundColor: item.color} : {backgroundColor: '#fff'}]"
+				class="box"
+				v-on:click.self="toggleColor(item)"
+			>
+				{{ item.text }}
+
+				<!-- This is an if else statement -->
+				<!-- if else statements have to be next to each other-->
+				<p v-if="item.show">ON</p>
+				<p v-else>OFF</p>
+				<button v-on:click="appendText(item)">Change Text</button>
+
+			</div>
+
+			<div>
+				<p v-if="showText"> This is a message to toggle! </p>
+				<button v-on:click="toggleText()">Toggle Message</button>
+			</div>
+		</div>
+	</div>
+	<script defer type="text/javascript" src="app.js"></script>
+</body>

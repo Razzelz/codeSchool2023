@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue App</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+	    <header>
+		    <h1>To-Do List</h1>
+	    </header>
+    <div id="app">
+
+	    <div id="center">
+	    <div class="input-fields">
+		    <h2>Add Item</h2>
+		    <br>
+		    <p>Description</p>
+		    <input type="text" v-model="UIdescription"></input>
+		    <br>
+		    <br>
+		    <br>
+		    <p>Category</p>
+		    <input type="text" v-model="UIcategory"></input>
+	    </div>
+		    <div class="add-button" v-on:click="addItem()">Add</div>
+
+	    <div class="search">
+		    <input type="text" placeholder="Search..." v-model="search"></input>
+		    <p>Search By Category</p>
+	    </div>
+
+	    </div>
+
+	    <br>
+	    <br>
+
+	    <div class="tasks">
+
+		    <div v-for="item in filteredTasks" class="row-body" v-if="search.length > 0 && filteredTasks.length > 0">
+			    <div>{{item.description}}</div>
+			    <div>{{item.category}}</div>
+		    </div>
+
+		    <div v-for="(item, index) in tasks" class="row-body" v-else>
+			    <div>{{item.description}}</div>
+			    <div>{{item.category}}</div>
+			    <button class="blue-button" @click="toggleModal(index)">Edit</button>
+			    <button class="blue-button" @click="deleteItem(item)">Delete</button>
+		    </div>
+
+
+	    </div>
+	    <div class="modal" v-show="modalOpen">
+		    <div class="content">
+			    <div id="close" v-on:click="toggleModal()">X</div>
+			    Description<input class="modalInput" type="text" v-model="modal.description"></input>
+			    <br>
+			    Category<input class="modalInput" type="text" v-model="modal.category"></input>
+			    <br>
+			    <button class="blue-button" v-on:click="updateTask()">Save</button>
+		    </div>
+	    </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
