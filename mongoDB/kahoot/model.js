@@ -1,23 +1,13 @@
-const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const {Schema} = mongoose;
+const dotenv = require("dotenv");
 
 dotenv.config();
 
+mongoose.set('strictQuery', false);
 mongoose.connect(process.env.DB_LINK);
 
-//Setup for database
-const quizSchema = new mongoose.Schema({
-        title: {
-                type: String,
-                required: [true, "Quiz must have a name."]
-        },
-        description: {
-		type: String,
-		required: [true, "Quiz must have a description."]
-        },
-});
-
-const questionSchema = new mongoose.Schema ({
+const QuestionSchema = new mongoose.Schema ({
 	text: {
 		type: String,
 		required: [true, "Question must have text."]
@@ -31,8 +21,18 @@ const questionSchema = new mongoose.Schema ({
 	}]
 });
 
-const Quiz = mongoose.model("quiz", quizSchema);
-const Question = mongoose.model("question", questionSchema);
+//Setup for database
+const QuizSchema = new mongoose.Schema({
+        title: {
+                type: String,
+                required: [true, "Quiz must have a name."]
+        },
+	description: String,
+	questions: [{ type: Schema.Types.ObjectId, ref: 'Question' }]
+});
+
+const Question = mongoose.model("Question", QuestionSchema);
+const Quiz = mongoose.model("Quiz", QuizSchema);
 
 module.exports = {
         Quiz: Quiz,
