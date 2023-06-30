@@ -40,6 +40,7 @@
 			    <div>{{exp.description}}</div>
 			    <div v-bind:style="[exp.amount > 0 ? {color: 'var(--green)'} : {color: 'var(--red)'}]">{{exp.amount}}</div>
 			    <div>{{exp.category}}</div>
+			    <button @click="deleteExpense(index)">Delete</button>
 			    <button @click="toggleModal(index)">Edit</button>
 		    </div>
 
@@ -49,6 +50,24 @@
 			    <div></div>
 		    </div>
 	    </div>
+		
+	    <h2>Add Expense</h2>
+	    <form @submit.prevent="addExpense()">
+		    <label>
+			    <span>Description</span>
+			    <input type="text" v-model="newExpense.description">
+		    </label>
+		    <label>
+			    <span>Amount</span>
+			    <input type="number" v-model="newExpense.amount">
+		    </label>
+		    <label>
+			    <span>Category</span>
+			    <input type="text" v-model="newExpense.category">
+		    </label>
+		    <button>Add New</button>
+	    </form>
+
 	    <div class="modal" v-show="modalOpen">
 		    <div class="content">
 			    <div id="close" v-on:click="toggleModal()">X</div>

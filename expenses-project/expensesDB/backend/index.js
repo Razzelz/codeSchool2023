@@ -56,7 +56,8 @@ app.post("/expenses", function(req, res) {
 
         if (errors.length == 0){
                 newExpense.save().then(function () {
-                        res.status(201).send("Created expense! " + "\n" + newExpense)
+			console.log("New expense created.");
+                        res.status(201).send(newExpense)
                 }).catch(function(errors) {
                         res.status(422).send(errors.errors)
                 });
@@ -105,7 +106,7 @@ app.put("/expenses/:expenseId", function(req, res) {
 
                                 model.Expense.findOneAndUpdate({ "_id": expenseId }, expense, {new: true, runValidators: true}).then(result => {
                                         console.log(result);
-                                        res.status(200).send("Updated expense. ");
+                                        res.status(204).send("Updated expense. ");
                                 });
 
                         }
